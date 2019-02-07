@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "915646143847",
+    "firebase_url": "https://bubteaapp.firebaseio.com",
+    "project_id": "bubteaapp",
+    "storage_bucket": "bubteaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915646143847:android:a40965fda2a2ebed",
+        "android_client_info": {
+          "package_name": "com.nindyahapsari.bubteatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915646143847-uqh0p1fav3245oficpcrvdvr66kj9nf7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nindyahapsari.bubteatapp",
+            "certificate_hash": "6eb856ab09f5d37b5327c162e8d63ece99eacd14"
+          }
+        },
+        {
+          "client_id": "915646143847-q8gf1m76cjhal2us3ob0eb7trcir2eg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGSzL74JlZECLqeKut0XUBGK9upPbfbTA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915646143847-q8gf1m76cjhal2us3ob0eb7trcir2eg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
