@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/input_design"
+        android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/detail_text_bubtea"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_image"
+            android:text="Bubble Tea"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linear_size_spinner"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/detail_text_bubtea"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_design">
+
+            <Spinner
+                android:id="@+id/size_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_milk_spinner"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/linear_size_spinner"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_design">
+
+            <Spinner
+                android:id="@+id/milk_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawSelectorOnTop="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_sugar_spinner"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/linear_milk_spinner"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_design">
+
+            <Spinner
+                android:id="@+id/sugar_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawSelectorOnTop="true" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/quantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_sugar_spinner"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/quantity"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/quantity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quantityLabel"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrement_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:onClick="decrement"
+                android:text="-"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/initial_quantity_value"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/increment_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:onClick="increment"
+                android:text="+"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_cost"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/quantity_button"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/cost_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/detail_place_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_cost"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/buttons"
+            android:padding="17dp"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+
+
+</RelativeLayout>

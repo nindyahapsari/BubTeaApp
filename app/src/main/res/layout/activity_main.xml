@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="140dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="100dp"
         android:text="Get your Favorite Bubble Tea Online"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -42,7 +42,7 @@
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/login_button"
+        android:layout_above="@id/login_button"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -52,6 +52,16 @@
         android:textSize="18sp"
         android:text="Join now? Sign Up"
         android:textColor="@android:color/black"
+        />
+
+    <ImageView
+        android:id="@+id/bubtea_icon"
+        android:layout_width="231dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/tea_homepage"
+        android:layout_below="@id/app_slogan"
+        android:layout_centerInParent="true"
+        android:paddingTop="20dp"
         />
 
 </RelativeLayout>

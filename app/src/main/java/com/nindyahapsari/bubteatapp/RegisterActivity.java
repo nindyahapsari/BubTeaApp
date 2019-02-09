@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         //An Activity is not fully initialized and ready to look up views until after setContentView(...) is called in onCreate()
         mCreateAccountButton = (Button) findViewById(R.id.register_btn);
         mInputName = (EditText) findViewById(R.id.register_name);
-        mInputPhone = (EditText) findViewById(R.id.register_email);
+        mInputPhone = (EditText) findViewById(R.id.register_phone);
         mInputPassword = (EditText) findViewById(R.id.register_password);
         loadingBar = new ProgressDialog(this);
 

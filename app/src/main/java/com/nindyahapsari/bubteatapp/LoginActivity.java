@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,30 +16,38 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.nindyahapsari.bubteatapp.Models.Users;
+import com.nindyahapsari.bubteatapp.Prevalent.Prevalent;
 import com.rey.material.widget.CheckBox;
+
+import io.paperdb.Paper;
+
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText mInputPhone, mInputPassword;
-    private Button mLoginBtn;
+    private Button mUserLoginBtn;
     private ProgressDialog loadingBar;
     private CheckBox mCheckBoxRememberMe;
 
-    private String mParentDbName;
+    private String mParentDbName = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mLoginBtn = (Button) findViewById(R.id.login_button);
+        mUserLoginBtn = (Button) findViewById(R.id.login_button_user);
         mInputPhone = (EditText) findViewById(R.id.login_phone_input);
         mInputPassword = (EditText) findViewById(R.id.login_password);
         loadingBar = new ProgressDialog(this);
         mCheckBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_checkbox);
 
+        // initialize Paper
+        Paper.init(this);
 
-        mLoginBtn.setOnClickListener(new View.OnClickListener() {
+
+        mUserLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser();
@@ -81,8 +88,8 @@ public class LoginActivity extends AppCompatActivity {
     {
         if(mCheckBoxRememberMe.isChecked())
         {
-            Paper.book().write(Prevalent.UserPhoneKey, phone);
-            Paper.book().write(Prevalent.UserPasswordKey, password);
+            Paper.book().write(Prevalent.mUserPhoneKey, phone);
+            Paper.book().write(Prevalent.mUserPasswordKey, password);
         }
 
 
@@ -102,22 +109,22 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         if (usersData.getPassword().equals(password))
                         {
-                            if (mParentDbName.equals("Admins"))
-                            {
-                                Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
-                                loadingBar.dismiss();
-
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
-                                startActivity(intent);
-                            }
-                            else if (parentDbName.equals("Users"))
+//                            if (mParentDbName.equals("Admins"))
+//                            {
+//                                Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
+//                                loadingBar.dismiss();
+//
+////                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+////                                startActivity(intent);
+//                            }
+                                if (mParentDbName.equals("Users"))
                             {
                                 Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                Prevalent.currentOnlineUser = usersData;
-                                startActivity(intent);
+                                Intent homeIntent = new Intent(LoginActivity.this, MenuActivity.class);
+                                Prevalent.mCurrentOnlineUser= usersData;
+                                startActivity(homeIntent);
                             }
                         }
                         else

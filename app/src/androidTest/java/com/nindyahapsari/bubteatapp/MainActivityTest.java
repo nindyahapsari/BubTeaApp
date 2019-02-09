@@ -15,6 +15,11 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
+
+
+
+
+
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
@@ -22,11 +27,16 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> mActivityRule =
             new ActivityTestRule<>(MainActivity.class);
 
+
+
     @Test
     public void login_button_test() {
         onView(withId(R.id.login_button)).perform(click());
         onView(withId(R.id.login_text)).check(matches(isDisplayed()));
 
     }
+
+//    The next test to implement:
+//    check if the remember me check box works and take straight to home activity page
 
 }
