@@ -50,8 +50,21 @@
     <string name="sweet_type_100">100% - Full Sweetness</string>
 
 
+    <!--temporary summary order -->
+    <string name="temp_order_summary">Date :</string>
+    <string name="temp_order_name">Tea Name :</string>
+    <string name="temp_order_quantity">Quantity :</string>
+    <string name="temp_order_price">Total Price :</string>
+    <string name="temp_order_time">Time : </string>
+
+
+    <string name="button_cart_order">Order and Pay</string>
+
+
+
+
     <!--OrderSummaryActivity summary values-->
-    <string name="order_summary"/>
+    <string name="order_summary">Your Order Summary</string>
     <string name="total">Total</string>
     <string name="summary_tea_label">Tea Type</string>
     <string name="summary_size_label">Size</string>

@@ -380,13 +380,13 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         cartMap.put("id", mProductId.toString());
         cartMap.put("name", mProdDetailName.getText().toString());
-        cartMap.put("Quantity", mQuantity);
+        cartMap.put("quantity", mQuantity);
         cartMap.put("totalprice", mTotalPrice);
-        cartMap.put("currentdate", saveCurrentDate);
-        cartMap.put("currenttime", saveCurrentTime);
+        cartMap.put("date", saveCurrentDate);
+        cartMap.put("time", saveCurrentTime);
 
         cartListRef.child("User View").child(Prevalent.mCurrentOnlineUser.getPhone())
-                .child("Products").child(saveCurrentDate)
+                .child("Products").child(saveCurrentDate + saveCurrentTime)
                 .updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

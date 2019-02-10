@@ -64,6 +64,7 @@ public class MenuActivity extends AppCompatActivity
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_cart);
@@ -175,6 +176,9 @@ public class MenuActivity extends AppCompatActivity
         if (id == R.id.nav_menu) {
 
         } else if (id == R.id.nav_cart) {
+
+            Intent intent = new Intent(MenuActivity.this, CartActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_order) {
 
