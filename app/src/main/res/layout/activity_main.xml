@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="93dp"
         android:text="Get your Favorite Bubble Tea Online"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -26,9 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/buttons"
         android:padding="20dp"
         android:text="Already Have an Account? Login"
@@ -41,9 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/login_button"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:background="@drawable/input_design"
         android:padding="20dp"
         android:text="Join now? Sign Up"
@@ -56,7 +60,8 @@
         android:layout_width="231dp"
         android:layout_height="153dp"
         android:layout_below="@id/app_slogan"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
         android:paddingTop="20dp"
         app:srcCompat="@drawable/tea_homepage" />
 

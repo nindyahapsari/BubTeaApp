@@ -61,8 +61,6 @@
     <string name="button_cart_order">Order and Pay</string>
 
 
-
-
     <!--OrderSummaryActivity summary values-->
     <string name="order_summary">Your Order Summary</string>
     <string name="total">Total</string>
@@ -110,5 +108,13 @@
         <item>75% - Moderately Sweet</item>
         <item>100% - Full Sweetness</item>
     </string-array>
+
+
+    <!--Payment Method-->
+    <string-array name="payment_array">
+        <item>At the Counter</item>
+        <item>Paypal</item>
+    </string-array>
+
 
 </resources>

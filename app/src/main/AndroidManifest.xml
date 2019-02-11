@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".PaymentConfimationActivity"></activity>
+        <activity android:name=".PayPalActivity" />
+        <activity android:name=".CartActivity" />
         <activity android:name=".ProductDetailActivity" />
         <activity
             android:name=".MenuActivity"

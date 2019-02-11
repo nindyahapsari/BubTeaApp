@@ -1,6 +1,9 @@
 package com.nindyahapsari.bubteatapp;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -32,6 +36,10 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+    private Button mPaymentMethodBtn;
+
+    private String mTotalPricePaypal = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +49,66 @@ public class CartActivity extends AppCompatActivity {
 
         Paper.init(this);
 
+        mAdminViewDB = FirebaseDatabase.getInstance().getReference().child("Cart List");
+
         mRecyclerView = findViewById(R.id.recycler_cart);
         mRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
 
+        mPaymentMethodBtn = (Button) findViewById(R.id.detail_place_order);
+
+
+
+
+        mPaymentMethodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                proceedPayment();
+
+            }
+
+
+        });
+
+    }
+
+    private void proceedPayment() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
+        builder.setTitle("Choose payment method");
+        builder.setSingleChoiceItems(R.array.payment_array, 0, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        })
+                .setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(CartActivity.this, PayPalActivity.class);
+                        startActivity(intent);
+
+
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        builder.show();
 
 
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
-
-
-        mAdminViewDB = FirebaseDatabase.getInstance().getReference().child("Cart List");
 
 
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
@@ -94,4 +147,8 @@ public class CartActivity extends AppCompatActivity {
         adapter.startListening();
 
     }
+
+
+
+
 }

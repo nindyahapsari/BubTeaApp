@@ -32,6 +32,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.7'
     implementation 'com.firebaseui:firebase-ui-database:3.2.2'
 
+    // Paypal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
+
     // extern
     implementation 'io.paperdb:paperdb:2.6'
     implementation 'com.github.rey5137:material:1.2.5'
