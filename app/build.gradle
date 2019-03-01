@@ -9,6 +9,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        testOptions {
+            unitTests.returnDefaultValues = true
+        }
     }
     buildTypes {
         release {
@@ -51,6 +55,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.10.0'
     testImplementation 'org.hamcrest:hamcrest:2.1'
+    testImplementation "org.robolectric:robolectric:4.1"
+
 
 
 }
