@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,8 +25,8 @@ import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mSignUpButton;
-    private Button mLoginButton;
+    private Button mSignUpButton, mLoginButton;
+    private ImageView mIcon;
     private ProgressDialog loadingBar;
 
     @Override
@@ -33,8 +36,17 @@ public class MainActivity extends AppCompatActivity {
 
         mSignUpButton = (Button) findViewById(R.id.signup_button);
         mLoginButton = (Button) findViewById(R.id.login_button);
+        mIcon = (ImageView) findViewById(R.id.bubtea_icon);
 
         loadingBar = new ProgressDialog(this);
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.transitions);
+
+        // for the transition animations
+        mSignUpButton.startAnimation(animation);
+        mLoginButton.startAnimation(animation);
+        mIcon.startAnimation(animation);
+
 
         // init Paper before using
         Paper.init(this);
